@@ -1,3 +1,7 @@
+import os
+import subprocess
+#from pinpon import other
+
 from pygame import*
 font.init()
 
@@ -75,5 +79,10 @@ while run:
         window.blit(text, (300 , 250))
     elif game_state == 'exit':
         exit()
+    elif game_state == 'game':
+
+        p = subprocess.run(['python', 'pinpon.py'])
+        
+
     display.update()
     clock.tick(30)

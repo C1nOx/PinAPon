@@ -1,3 +1,4 @@
+
 from pygame import*
 mixer.init()
 font.init()
@@ -51,9 +52,12 @@ class Ball(GameSprite):
         elif ball.rect.x < 0:
             mw.blit(lose1_txt, (250, 400))
             mw.blit(win2_txt, (250 , 200))
+            
+            
         elif ball.rect.x > 800:
             mw.blit(lose2_txt, (250, 400))
             mw.blit(win1_txt, (250 , 200))
+            
             
         
 
@@ -70,13 +74,14 @@ r_p = Right_player(700, 250, 80, 250,'image.png' , 10 )
 ball = Ball(400 , 300 , 60 , 60 , 'ponpin.png', 4 )
 raketki.add(l_p)
 raketki.add(r_p)
-
+other = True
 run = True
 finish = False
 while run:
     for e in event.get():
         if e.type == QUIT:
             run = False
+            other = False
     
 
     mw.blit(BG , (0,0))
